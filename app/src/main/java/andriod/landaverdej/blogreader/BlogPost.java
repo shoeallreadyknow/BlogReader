@@ -1,10 +1,12 @@
 package andriod.landaverdej.blogreader;
 
 public class BlogPost {
-    public final String tittle;
+    public final String title;
     public final String url;
 
-    public BlogPost(String tittle, String url){
+    public BlogPost(String title, String url){
+        this.title= title;
+        this.url= url;
 
     }
 
