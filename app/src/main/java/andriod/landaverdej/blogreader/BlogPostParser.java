@@ -1,9 +1,10 @@
+package andriod.landaverdej.blogreader;
+
 import android.util.Log;
 
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.IOError;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -27,11 +28,12 @@ private  static  BlogPostParser parser;
         try {
 
             while ((line = reader.readLine()) != null) {
-
+                    builder.append(line);
             }
+            Log.i("andriod.landaverdej.blogreader.BlogPostParser", "Input Stream String: " + builder.toString());
         }
         catch (IOException error){
-            Log.e("BlogPostParser", "IOException" + error);
+            Log.e("andriod.landaverdej.blogreader.BlogPostParser", "IOException" + error);
         }
         return jsonObject;
     }
