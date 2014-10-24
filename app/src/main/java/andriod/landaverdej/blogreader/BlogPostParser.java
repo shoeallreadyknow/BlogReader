@@ -2,6 +2,7 @@ package andriod.landaverdej.blogreader;
 
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -48,6 +49,11 @@ public class BlogPostParser {
         return jsonObject;
     }
     public void readfeed(JSONObject jsonObject){
-
+      try {
+          JSONArray jsonPost = jsonObject.getJSONArray("post");
+         }
+      catch (JSONException error){
+          Log.e("BlogPostParser", "JSONException: " + error);
+      }
     }
 }
