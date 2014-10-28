@@ -13,24 +13,26 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class BlogPostParser {
-    private  static  BlogPostParser parser;
-    public ArrayList<BlogPost> post;
+    public class BlogPostParser {
+        private  static  BlogPostParser parser;
+         public ArrayList<BlogPost> posts;
 
     private BlogPostParser(){
+        posts = new ArrayList<BlogPost>();
 
     }
- public static BlogPostParser get(){
-    if(parser == null){
-      parser= new BlogPostParser();
+     public static BlogPostParser get(){
+        if(parser == null){
+        parser= new BlogPostParser();
     }
      return parser;
  }
     public JSONObject parse(InputStream inputStream){
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-       StringBuilder builder= new StringBuilder();
+        StringBuilder builder= new StringBuilder();
         JSONObject jsonObject = null;
-     String line;
+
+        String line;
         try {
 
             while ((line = reader.readLine()) != null) {
@@ -58,6 +60,7 @@ public class BlogPostParser {
               String url= post.getString("url");
 
               BlogPost blogPost= new BlogPost(title, url);
+                posts.add(blogPost);
           }
       }
       catch (JSONException error){
