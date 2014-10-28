@@ -50,8 +50,16 @@ public class BlogPostParser {
     }
     public void readfeed(JSONObject jsonObject){
       try {
-          JSONArray jsonPost = jsonObject.getJSONArray("post");
-         }
+          JSONArray jsonPosts = jsonObject.getJSONArray("post");
+
+          for (int index = 0; index < jsonPosts.length(); index++) {
+                JSONObject post = jsonPosts.getJSONObject(index);
+                String title = post.getString("tittle");
+              String url= post.getString("url");
+
+              BlogPost blogPost= new BlogPost(title, url);
+          }
+      }
       catch (JSONException error){
           Log.e("BlogPostParser", "JSONException: " + error);
       }
