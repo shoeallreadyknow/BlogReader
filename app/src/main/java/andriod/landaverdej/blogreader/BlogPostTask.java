@@ -4,6 +4,7 @@ package andriod.landaverdej.blogreader;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 
 import org.json.JSONObject;
 
@@ -40,7 +41,7 @@ public class BlogPostTask  extends AsyncTask<Activity,Void,JSONObject> {
 
     @Override
     protected void onPostExecute(JSONObject jsonObject) {
-        super.onPostExecute(jsonObject);
-
+        ArrayAdapter<String> adapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayStrings);
+        listView.setAdapter(adapter);
     }
 }
