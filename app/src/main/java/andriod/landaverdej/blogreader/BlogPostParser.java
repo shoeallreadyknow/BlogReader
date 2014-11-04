@@ -52,11 +52,11 @@ import java.util.ArrayList;
     }
     public void readfeed(JSONObject jsonObject){
       try {
-          JSONArray jsonPosts = jsonObject.getJSONArray("post");
+          JSONArray jsonPosts = jsonObject.getJSONArray("posts");
 
           for (int index = 0; index < jsonPosts.length(); index++) {
                 JSONObject post = jsonPosts.getJSONObject(index);
-                String title = post.getString("tittle");
+                String title = post.getString("title");
               String url= post.getString("url");
 
               BlogPost blogPost= new BlogPost(title, url);
