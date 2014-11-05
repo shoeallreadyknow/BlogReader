@@ -10,6 +10,13 @@ public class BlogPost {
 
     }
 
+    @Override
+    public String toString() {
+        return title;
+    }
+
+
 }
+
 
 
