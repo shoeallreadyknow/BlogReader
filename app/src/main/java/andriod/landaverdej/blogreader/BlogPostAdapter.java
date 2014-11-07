@@ -17,7 +17,9 @@ public class BlogPostAdapter extends ArrayAdapter<BlogPost> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        BlogPost post= getItem(position);
         
+
     }
 
 }
