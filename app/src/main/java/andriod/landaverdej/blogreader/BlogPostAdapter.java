@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 s
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,9 @@ public class BlogPostAdapter extends ArrayAdapter<BlogPost> {
             convertView = LayoutInflater.from(getContext()).inflate(android.R.layout.simple_list_item_1,parent,false)
         }
 
+        TextView textView= (TextView)convertView.findViewById(android.R.id.text1);
+        textView.setText(post.title);
+        return convertView;
     }
 
 }
